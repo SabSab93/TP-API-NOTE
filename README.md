@@ -1,4 +1,4 @@
-# Projet initial pour vos exercices d'algorithmie en typescript
+# Projet initial pour l'utilisation API avec auth. 
 
 ## Installation
 

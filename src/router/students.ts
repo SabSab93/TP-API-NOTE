@@ -95,7 +95,6 @@ studentRouter.put("/:id", async (req, res) => {
       firstname: req.body.data.firstname,
       age: req.body.data.age,
       classRoomId: req.body.data.classRoomId,
-      // studentGroups: req.body.data.studentGroups
     },
   });
 
@@ -128,5 +127,5 @@ studentRouter.post('/:idStudent/groups/:idGroup', async (req, res) => {
     }
 
   });
-  res.status(201).json(`Letudiant numéro ${studentGroup.studentId} appartient maintenant au groupe ${studentGroup.groupId}`);
+  res.status(201).json(`L'etudiant numéro ${studentGroup.studentId} appartient maintenant au groupe ${studentGroup.groupId}`);
 })
