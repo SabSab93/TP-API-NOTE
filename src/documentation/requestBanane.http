@@ -10,8 +10,6 @@ Content-Type: application/json
 }
 ###
 
-
-
 ###GET Banane couleur jaune
 GET http://localhost:1992/bananes?couleur=jaune
 
