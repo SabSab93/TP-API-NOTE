@@ -13,60 +13,88 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// GROUP ET STUDENT FORME STUDENTGROUP MANY TO MANY
-model Student {
-  id        Int        @id @default(autoincrement())
-  lastname     String
-  firstname    String
-  age          Int
-  classRoom    ClassRoom? @relation(fields: [classRoomId], references: [id]) //Relation One to many un etudiant appartient à une classe
-  classRoomId   Int //Relation One to many
-  studentGroups StudentGroup[]
-}
 
-model StudentGroup {
-  studentId   Int 
-  groupId      Int
-  student     Student  @relation(fields: [studentId], references: [id])
-  group       Group    @relation(fields: [groupId], references: [id])
-
-  @@id([groupId, studentId])
+model Instrument {
+  id       Int        @id @default(autoincrement())
+  name     String
+  poids    Int
+  couleur  String
+  prix     Int 
 }
 
 
-model Group {
-  id        Int        @id @default(autoincrement())
-  name     String 
-  
-
-  StudentGroup StudentGroup[]
-}
-
-//ONE TO MANY ONE COTE STUDENT ET MANY COTE CLASSROOM
-model ClassRoom {
-  id        Int        @id @default(autoincrement())
-  name     String 
-  Students Student [] //Relation One to many une classe possede plusieur etudiants
+model Banane {
+  id       Int        @id @default(autoincrement())
+  couleur  String?
+  prix     Decimal
 }
 
 
 model User {
   id        Int        @id @default(autoincrement())
-  lastname  String 
-  firstname String
-  email     String     
-  mtp       String      
+  pseudo  String 
+  motdepasse String      
 }
 
 
-//ONE TO ONE
-// model User {
-//   id      Int      @id @default(autoincrement())
-//   profile Profile?   // ? c'est relation 0
+
+
+
+
+// // GROUP ET STUDENT FORME STUDENTGROUP MANY TO MANY
+// model Student {
+//   id        Int        @id @default(autoincrement())
+//   lastname     String
+//   firstname    String
+//   age          Int
+//   classRoom    ClassRoom? @relation(fields: [classRoomId], references: [id]) //Relation One to many un etudiant appartient à une classe
+//   classRoomId   Int //Relation One to many
+//   studentGroups StudentGroup[]
 // }
 
-// model Profile {
-//   id     Int  @id @default(autoincrement())
-//   user   User @relation(fields: [userId], references: [id])
-//   userId Int  @unique // relation scalar field (used in the `@relation` attribute above)
+// model StudentGroup {
+//   studentId   Int 
+//   groupId      Int
+//   student     Student  @relation(fields: [studentId], references: [id])
+//   group       Group    @relation(fields: [groupId], references: [id])
+
+//   @@id([groupId, studentId])
 // }
+
+
+// model Group {
+//   id        Int        @id @default(autoincrement())
+//   name     String 
+  
+
+//   StudentGroup StudentGroup[]
+// }
+
+// //ONE TO MANY ONE COTE STUDENT ET MANY COTE CLASSROOM
+// model ClassRoom {
+//   id        Int        @id @default(autoincrement())
+//   name     String 
+//   Students Student [] //Relation One to many une classe possede plusieur etudiants
+// }
+
+
+// model User {
+//   id        Int        @id @default(autoincrement())
+//   lastname  String 
+//   firstname String
+//   email     String     
+//   mtp       String      
+// }
+
+
+// //ONE TO ONE
+// // model User {
+// //   id      Int      @id @default(autoincrement())
+// //   profile Profile?   // ? c'est relation 0
+// // }
+
+// // model Profile {
+// //   id     Int  @id @default(autoincrement())
+// //   user   User @relation(fields: [userId], references: [id])
+// //   userId Int  @unique // relation scalar field (used in the `@relation` attribute above)
+// // }

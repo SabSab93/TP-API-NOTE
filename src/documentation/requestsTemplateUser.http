@@ -17,9 +17,9 @@ Content-Type: application/json
 
 {
     "data": {
-        "firstname": "Sabri",
-        "lastname": "Hab",
-        "mtp": "toto"
+        "pseudo": "Sabristi",
+        "motdepasse": "sabristi88"
+
     }
 }
 ###

@@ -10,22 +10,20 @@ const prisma = new PrismaClient();
 
 // POST
 userRouter.post('/register', async (req, res) => {
-  const { email } = req.body.data;  
-  const userWithEmail = await prisma.user.findFirst({ where: { email } });
-  if (userWithEmail) {
-      return res.status(400).json("Email already exists");  
+  const { pseudo } = req.body.data;  
+  const userWithPseudo = await prisma.user.findFirst({ where: { pseudo } });
+  if (userWithPseudo) {
+      return res.status(400).json("Pseudo already use");  
   } else {
-      const hashedPassword = await bcrypt.hash(req.body.data.mtp, 10);
+      const hashedPassword = await bcrypt.hash(req.body.data.motdepasse, 10);
       const newUser = await prisma.user.create({
           data: {
-              firstname: req.body.data.firstname,
-              lastname: req.body.data.lastname,
-              email: req.body.data.email,
-              mtp: hashedPassword 
+              pseudo: req.body.data.pseudo,
+              motdepasse: hashedPassword
           }
       });
 
-      const token = jwt.sign({ email }, process.env.JWT_SECRET!);
+      const token = jwt.sign({ pseudo }, process.env.JWT_SECRET!);
       return res.status(201).json({token});
   }
 });
@@ -98,20 +96,18 @@ userRouter.put("/:id", async (req, res) => {
       return res.status(404).json({ message: "User not found" });
     }
   
-    let hashedPassword = user.mtp; 
+    let hashedPassword = user.pseudo; 
   
     if (req.body.data.mtp) {
-      hashedPassword = await bcrypt.hash(req.body.data.mtp, 10);
+      hashedPassword = await bcrypt.hash(req.body.data.pseudo, 10);
     }
   
 
     const updatedUser = await prisma.user.update({
       where: { id: userId },
       data: {
-        lastname: req.body.data.lastname,
-        firstname: req.body.data.firstname,
-        email: req.body.data.email,
-        mtp: hashedPassword,
+        pseudo: req.body.data.pseudo,
+        motdepasse: hashedPassword,
       },
     });
   

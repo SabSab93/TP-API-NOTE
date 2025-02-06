@@ -1,0 +1,48 @@
+###GET Instrument
+GET http://localhost:1992/api/instruments
+
+###
+////////////////////////////////////////////////////////
+
+###GET Instrument particulier
+GET http://localhost:1992/api/instruments/1
+Content-Type: application/json
+
+###
+////////////////////////////////////////////////////////
+
+###POST Instrument
+POST http://localhost:1992/api/instruments
+Content-Type: application/json
+
+{
+    "data": {
+        "name":"guitare",
+        "poids":50,
+        "couleur":"rouge",
+        "prix":300
+    }
+}
+###
+////////////////////////////////////////////////////////
+
+###PUT Instrument
+PUT http://localhost:1992/api/instruments/2
+Content-Type: application/json
+
+{
+    "data": {
+        "name":"guitare",
+        "poids":50,
+        "couleur":"vert",
+        "prix":300
+    }
+}
+
+###
+////////////////////////////////////////////////////////
+
+###DELETE Instrument particulier
+DELETE http://localhost:1992/api/instruments/3
+Content-Type: application/json
+
