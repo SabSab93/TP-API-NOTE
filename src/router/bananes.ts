@@ -1,9 +1,8 @@
 import { Router } from "express";
-import { PrismaClient } from "@prisma/client";
+
 
 
 export const bananeRouter = Router();
-const prisma = new PrismaClient();
 
 
 bananeRouter.get('http://localhost:1992/bananes?couleur', async function(req, res) {
