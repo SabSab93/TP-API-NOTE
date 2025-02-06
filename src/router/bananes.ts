@@ -9,5 +9,5 @@ bananeRouter.get('http://localhost:1992/bananes?couleur', async function(req, re
   res.status(202).json({ message: `"couleur":"jaune "prix":2.5` });
  }else {
   res.status(202).json({ message: `"couleur":"null "prix":2.5` });
- }
+ };
   });
