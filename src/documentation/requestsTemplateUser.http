@@ -17,7 +17,7 @@ Content-Type: application/json
 
 {
     "data": {
-        "firstname": "Sab",
+        "firstname": "Sabri",
         "lastname": "Hab",
         "mtp": "toto"
     }
@@ -33,6 +33,7 @@ Content-Type: application/json
     "data": {
         "firstname": "Maitre",
         "lastname": "Du_Temps",
+        "email": "sabrinahamadi@gmail.com",
         "mtp": "temps"
     }
 }
