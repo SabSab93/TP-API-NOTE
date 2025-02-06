@@ -1,40 +1,37 @@
 ###GET User
-GET http://localhost:1337/api/auth
+GET http://localhost:1992/api/auth
 
 ###
 ////////////////////////////////////////////////////////
 
 ###GET User particulier
-GET http://localhost:1337/api/auth/2
+GET http://localhost:1992/api/auth/2
 Content-Type: application/json
 
 ###
 ////////////////////////////////////////////////////////
 
 ###POST User
-POST http://localhost:1337/api/auth/register
+POST http://localhost:1992/api/auth/register
 Content-Type: application/json
 
 {
     "data": {
         "pseudo": "Sabristi",
         "motdepasse": "sabristi88"
-
     }
 }
 ###
 ////////////////////////////////////////////////////////
 
 ###PUT users
-PUT http://localhost:1337/api/auth/3
+PUT http://localhost:1992/api/auth/3
 Content-Type: application/json
 
 {
     "data": {
-        "firstname": "Maitre",
-        "lastname": "Du_Temps",
-        "email": "sabrinahamadi@gmail.com",
-        "mtp": "temps"
+        "pseudo": "Sabristi",
+        "motdepasse": "sabristi88"
     }
 }
 
@@ -42,6 +39,6 @@ Content-Type: application/json
 ////////////////////////////////////////////////////////
 
 ###DELETE users particulier
-DELETE http://localhost:1337/api/auth/3
+DELETE http://localhost:1992/api/auth/3
 Content-Type: application/json
 

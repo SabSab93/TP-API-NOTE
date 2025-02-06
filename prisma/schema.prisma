@@ -13,28 +13,38 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
-model Instrument {
-  id       Int        @id @default(autoincrement())
-  name     String
-  poids    Int
-  couleur  String
-  prix     Int 
-}
-
-
-model Banane {
-  id       Int        @id @default(autoincrement())
-  couleur  String?
-  prix     Decimal
-}
-
-
 model User {
   id        Int        @id @default(autoincrement())
   pseudo  String 
   motdepasse String      
 }
+
+
+model Instrument {
+  id              Int        @id @default(autoincrement())
+  name            String
+  poids           Int
+  couleur         String
+  prix            Int 
+  reparations     Reparation[]
+}
+
+model Reparation {
+  id              Int        @id @default(autoincrement())
+  name            String
+  prix            Int 
+  instrument      Instrument @relation(fields: [instrumentId], references: [id]) 
+  instrumentId    Int
+}
+
+
+model Banane {
+  id              Int        @id @default(autoincrement())
+  couleur         String?
+  prix            Decimal
+}
+
+
 
 
 

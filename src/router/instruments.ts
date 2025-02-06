@@ -1,5 +1,7 @@
 import { Router } from "express";
 import { PrismaClient } from "@prisma/client";
+import { monMiddlewareBearer } from "../checkToken";
+
 
 
 export const instrumentRouter = Router();
@@ -7,7 +9,7 @@ const prisma = new PrismaClient();
 
 
 // POST
-instrumentRouter.post('/', async (req, res) => {
+instrumentRouter.post('/', monMiddlewareBearer, async (req, res) => {
   const instrument = await prisma.instrument.create({
     data : {
       name:req.body.data.name,

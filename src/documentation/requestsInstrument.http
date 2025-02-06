@@ -14,13 +14,14 @@ Content-Type: application/json
 ###POST Instrument
 POST http://localhost:1992/api/instruments
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwc2V1ZG8iOiJTYWJyaXN0aSIsImlhdCI6MTczODg0ODE3OH0.8DIfYw4uYG-U8YkmrcOSMvIZMU_arLyOpUeoKePz2k8
 
 {
     "data": {
-        "name":"guitare",
-        "poids":50,
-        "couleur":"rouge",
-        "prix":300
+        "name":"flûte",
+        "poids":2,
+        "couleur":"blanche",
+        "prix":20
     }
 }
 ###
