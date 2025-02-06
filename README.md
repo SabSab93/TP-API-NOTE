@@ -1,5 +1,7 @@
 # Projet initial pour l'utilisation API avec auth. 
 
+Projet en Express.js avec l'ORM Prisma
+
 ## Installation
 
 1. Clonez le projet
