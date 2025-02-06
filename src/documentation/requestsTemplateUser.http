@@ -40,7 +40,7 @@ Content-Type: application/json
 ###
 ////////////////////////////////////////////////////////
 
-###DELETE Student particulier
+###DELETE users particulier
 DELETE http://localhost:1337/api/auth/3
 Content-Type: application/json
 

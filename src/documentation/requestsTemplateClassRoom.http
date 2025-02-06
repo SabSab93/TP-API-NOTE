@@ -11,7 +11,7 @@ Content-Type: application/json
 ###
 ////////////////////////////////////////////////////////
 
-###POST students
+###POST classRoom
 POST http://localhost:1337/api/classRooms
 Content-Type: application/json
 
@@ -23,7 +23,7 @@ Content-Type: application/json
 ###
 ////////////////////////////////////////////////////////
 
-###PUT students
+###PUT classRoom
 PUT http://localhost:1337/api/classRooms/1
 Content-Type: application/json
 
@@ -36,7 +36,7 @@ Content-Type: application/json
 ###
 ////////////////////////////////////////////////////////
 
-###DELETE Student particulier
+###DELETE classRoom particulier
 DELETE http://localhost:1337/api/classRooms/3
 Content-Type: application/json
 
