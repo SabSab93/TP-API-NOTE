@@ -6,22 +6,11 @@ export const bananeRouter = Router();
 const prisma = new PrismaClient();
 
 
-// POST
-bananeRouter.post('/', async (req, res) => {
-  const banane = await prisma.banane.create({
-    data : {
-      couleur:req.body.data.couleur,
-      prix:req.body.data.prix,
-    }
+bananeRouter.get('http://localhost:1992/bananes?couleur', async function(req, res) {
+  let couleur = req.query.couleur;
+ if (couleur==="jaune"){
+  res.status(202).json({ message: `"couleur":"jaune "prix":2.5` });
+ }else {
+  res.status(202).json({ message: `"couleur":"null "prix":2.5` });
+ }
   });
-  res.status(201).json(banane);
-})
-
-
-
-// GET
-bananeRouter.get("/?couleur={couleur}", async (req, res) => {
-  const bananes = await prisma.banane.findMany();
-  res.json(bananes);
-})
-

@@ -18,12 +18,14 @@ const app = express();
 app.use(cors()); 
 app.use(express.json());
 
+const apiRouterBanane = express.Router()
+apiRouterBanane.use(bananeRouter)
+
 const apiRouter = express.Router();
 
 
 apiRouter.use("/auth", userRouter)
 apiRouter.use("/instruments", instrumentRouter)
-apiRouter.use("/bananes", bananeRouter)
 apiRouter.use("/reparations",monMiddlewareBearer, reparationRouter)
 
 app.use("/api", apiRouter);

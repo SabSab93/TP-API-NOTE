@@ -15,12 +15,3 @@ Content-Type: application/json
 ###GET Banane couleur jaune
 GET http://localhost:1992/bananes?couleur=jaune
 
-###
-////////////////////////////////////////////////////////
-
-//Qui renvoie un objet JSON contenant
-GET http://localhost:1992/bananes?couleur=jaune&prix=2.5
-
-
-// Couleur non fournie ou pas jaune 
-GET http://localhost:1992/bananes?couleur=$null

@@ -1,9 +1,3 @@
-###GET Instrument
-GET http://localhost:1992/api/reparations
-
-###
-////////////////////////////////////////////////////////
-
 ###POST Reparation
 POST http://localhost:1992/api/reparations
 Content-Type: application/json
@@ -19,8 +13,6 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwc2V1ZG8iOiJTYWJya
 }
 ###
 ////////////////////////////////////////////////////////
-
-
 
 ###DELETE Reparation 
 DELETE http://localhost:1992/api/reparations/3

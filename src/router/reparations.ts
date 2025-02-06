@@ -44,12 +44,4 @@ reparationRouter.delete("/:id", async (req, res) => {
     res.json({ message: "Reparation deleted" });
   });
   
-  
-
-
-// GET
-reparationRouter.get("/", async (req, res) => {
-  const instruments = await prisma.instrument.findMany();
-  res.json(instruments);
-})
 
