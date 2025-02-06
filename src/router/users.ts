@@ -3,7 +3,6 @@ import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-
 export const userRouter = Router();
 const prisma = new PrismaClient();
 
@@ -79,7 +78,6 @@ userRouter.delete("/:id", async (req, res) => {
 });
 
 
-
 //PUT 
 userRouter.put("/:id", async (req, res) => {
     const userId = parseInt(req.params.id);
@@ -102,7 +100,6 @@ userRouter.put("/:id", async (req, res) => {
       hashedPassword = await bcrypt.hash(req.body.data.pseudo, 10);
     }
   
-
     const updatedUser = await prisma.user.update({
       where: { id: userId },
       data: {

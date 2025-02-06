@@ -2,8 +2,6 @@ import { Router } from "express";
 import { PrismaClient } from "@prisma/client";
 import { monMiddlewareBearer } from "../checkToken";
 
-
-
 export const instrumentRouter = Router();
 const prisma = new PrismaClient();
 
@@ -22,12 +20,12 @@ instrumentRouter.post('/', monMiddlewareBearer, async (req, res) => {
 })
 
 
-
 // GET
 instrumentRouter.get("/", async (req, res) => {
   const instruments = await prisma.instrument.findMany();
   res.json(instruments);
 })
+
 
 //GET ID
 instrumentRouter.get("/:id", async (req, res) => {
@@ -47,6 +45,7 @@ instrumentRouter.get("/:id", async (req, res) => {
 
   res.json(instrument);
 });
+
 
 //DELETE
 instrumentRouter.delete("/:id", async (req, res) => {

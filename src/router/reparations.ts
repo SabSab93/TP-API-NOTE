@@ -1,12 +1,8 @@
 import { Router } from "express";
 import { PrismaClient } from "@prisma/client";
 
-
-
-
 export const reparationRouter = Router();
 const prisma = new PrismaClient();
-
 
 // POST
 reparationRouter.post('/', async (req, res) => {
